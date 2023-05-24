@@ -197,7 +197,6 @@ class Cow : public Animal {
 
 class Shape {
     public:
-        virtual ~Shape() {}
         virtual double getArea() const = 0;
         virtual std::unique_ptr<Shape> get_clone() const = 0;
 };
@@ -215,7 +214,7 @@ class Rectangle : public Shape {
         }
 
         std::unique_ptr<Shape> get_clone() const override {
-            return std::make_unique<Rectangle>(*this);
+            return std::make_unique<Shape>(*this);
         }
 };
 
@@ -231,7 +230,7 @@ class Circle : public Shape {
         }
 
         std::unique_ptr<Shape> get_clone() const override {
-            return std::make_unique<Circle>(*this);
+            return std::make_unique<Shape>(*this);
         }
 };
 
