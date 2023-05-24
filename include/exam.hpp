@@ -137,6 +137,9 @@ public:
 
 // ----- Classe EXO4 -----
 
+// My best solution, get the less amout of errors...
+// But I'm not able to do it.
+
 class EXO4 {
     public:
         static const int value = 12;
