@@ -131,24 +131,29 @@ void eval_exo7()
 {
     // à vous de coder
 
+	// All the beautiful shapes
 	vector<unique_ptr<Shape>> shapes;
 
+	// □
     shapes.push_back(make_unique<Rectangle>(2, 3));
     shapes.push_back(make_unique<Rectangle>(4, 5));
     shapes.push_back(make_unique<Rectangle>(1, 6));
     shapes.push_back(make_unique<Rectangle>(3, 4));
     shapes.push_back(make_unique<Rectangle>(2.5, 2.5));
 
+	// ◯
     shapes.push_back(make_unique<Circle>(1.5));
     shapes.push_back(make_unique<Circle>(2.5));
     shapes.push_back(make_unique<Circle>(3));
     shapes.push_back(make_unique<Circle>(4));
     shapes.push_back(make_unique<Circle>(2));
 
+	// Nice function to get the total area of shapes in vector
     double totalArea = calculateTotalArea(shapes);
 
     cout << "Surface cumulée de toutes les formes : " << totalArea << endl;
 
+	// Get all shapes' areas individually
     for (const auto& shape : shapes) {
         auto copy = shape->get_clone();
         cout << "Surface de la copie : " << copy->getArea() << endl;
