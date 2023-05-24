@@ -36,6 +36,7 @@ class EXO11 : public EXO1 {
             val = initial_val;
         }
 
+        // Redefine value function
         inline int value() {return val;}
 };
 
