@@ -106,7 +106,7 @@ void eval_exo6()
 
 	// Déclarer et remplir un vecteur animals de pointeurs d'Animal
 
-	// Making almost bizzfuzz test with animals because why not
+	// Making almost fizzbuzz test with animals because why not
 	vector<Animal *> ferme(11);
 	for (int i(0) ; i < ferme.size() ; i++) {
 		if (i % 3 == 0) {
@@ -122,4 +122,35 @@ void eval_exo6()
 	for (auto animal: ferme) {
 		animal->make_sound();
 	}
+}
+
+//------------------------------------------------------------------
+// EXO 7
+// code à copier dans exam.cpp
+void eval_exo7()
+{
+    // à vous de coder
+
+	vector<unique_ptr<Shape>> shapes;
+
+    shapes.push_back(make_unique<Rectangle>(2, 3));
+    shapes.push_back(make_unique<Rectangle>(4, 5));
+    shapes.push_back(make_unique<Rectangle>(1, 6));
+    shapes.push_back(make_unique<Rectangle>(3, 4));
+    shapes.push_back(make_unique<Rectangle>(2.5, 2.5));
+
+    shapes.push_back(make_unique<Circle>(1.5));
+    shapes.push_back(make_unique<Circle>(2.5));
+    shapes.push_back(make_unique<Circle>(3));
+    shapes.push_back(make_unique<Circle>(4));
+    shapes.push_back(make_unique<Circle>(2));
+
+    double totalArea = calculateTotalArea(shapes);
+
+    cout << "Surface cumulée de toutes les formes : " << totalArea << endl;
+
+    for (const auto& shape : shapes) {
+        auto copy = shape->get_clone();
+        cout << "Surface de la copie : " << copy->getArea() << endl;
+    }
 }

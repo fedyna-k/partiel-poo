@@ -7,6 +7,7 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <memory>
 
 // ----- Classe EXO1 -----
 
@@ -189,5 +190,57 @@ class Cow : public Animal {
         inline void make_sound() {std::cout << "meuh" << std::endl;}
 };
 
+
+// ----- Classe EXO7 -----
+
+#define PI (double)3.14159265358979323846
+
+class Shape {
+    public:
+        virtual ~Shape() {}
+        virtual double getArea() const = 0;
+        virtual std::unique_ptr<Shape> get_clone() const = 0;
+};
+
+class Rectangle : public Shape {
+    private:
+        double width;
+        double height;
+
+    public:
+        Rectangle(double w, double h) : width(w), height(h) {}
+
+        double getArea() const override {
+            return width * height;
+        }
+
+        std::unique_ptr<Shape> get_clone() const override {
+            return std::make_unique<Rectangle>(*this);
+        }
+};
+
+class Circle : public Shape {
+    private:
+        double radius;
+
+    public:
+        Circle(double r) : radius(r) {}
+
+        double getArea() const override {
+            return PI * radius * radius;
+        }
+
+        std::unique_ptr<Shape> get_clone() const override {
+            return std::make_unique<Circle>(*this);
+        }
+};
+
+double calculateTotalArea(std::vector<std::unique_ptr<Shape>> shapes) {
+    double totalArea = 0;
+    for (const auto& s : shapes) {
+        totalArea += s->getArea();
+    }
+    return totalArea;
+}
 
 #endif
