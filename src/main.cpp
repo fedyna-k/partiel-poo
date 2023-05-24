@@ -23,7 +23,7 @@ int main()
 
 	cout << "\n-----------------------------------------------" << endl
 		<< "test_voiture" << endl;
-	//test_voiture();
+	test_voiture();
 
 	cout << "\n-----------------------------------------------" << endl
 		<< "run_compas" << endl;

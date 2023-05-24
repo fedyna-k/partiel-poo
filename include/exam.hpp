@@ -1,7 +1,11 @@
 #ifndef __EXAM_HPP__
 #define __EXAM_HPP__
 
+// Includes for all files
+
 #include <iostream>
+#include <string>
+#include <cmath>
 
 // ----- Classe EXO1 -----
 
@@ -38,6 +42,49 @@ class EXO11 : public EXO1 {
 
         // Redefine value function
         inline int value() {return val;}
+};
+
+//------------------------------------------------------------------
+// EXO 2
+// code à copier et modifier dans exam.hpp
+
+class Voiture {
+    private:
+        float _vitesse;
+        const float _engine_limit;
+
+    public:
+
+        // Add constructor
+        Voiture(float engine_limit) :
+            _engine_limit(engine_limit),
+            _vitesse(0.)
+        {}
+
+        // Add std:: and include <string>
+        std::string control() {
+            return _vitesse > _engine_limit ? "\ttoo fast !" : "\tok";
+        }
+
+        // Add std:: and reduce acceleration ratio 1.3 => 1.1
+        void speedUp() {
+            std::cout << "speed = " << (_vitesse == 0 ? _vitesse = 1 : _vitesse *= 1.1) << control() << std::endl; 
+        }
+
+        // Add std::
+        void speedDown() {
+            std::cout << "speed = " << (_vitesse *= 0.9) << control() << std::endl; 
+        }
+
+        void run(float targetSpeed) {
+            while (std::abs(targetSpeed - _vitesse) > 5.f)
+            {
+                while (_vitesse < targetSpeed)
+                    speedUp();
+                while (_vitesse > targetSpeed)
+                    speedDown();
+            }
+        }
 };
 
 #endif

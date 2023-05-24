@@ -30,3 +30,12 @@ void eval_exo11()
 
 // output:
 // 4.9.14.19.24.29.34.39.44.49.
+
+//------------------------------------------------------------------
+// code à copier dans exam.cpp (ne pas modifier)
+void test_voiture()
+{
+	float limite_moteur = 160;
+	Voiture voiture(limite_moteur);
+	voiture.run(130);
+}
