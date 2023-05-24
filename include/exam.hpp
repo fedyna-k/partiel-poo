@@ -87,4 +87,50 @@ class Voiture {
         }
 };
 
+//------------------------------------------------------------------
+// EXO 3
+// code à copier et modifier dans exam.hpp et/ou exam.cpp
+class Compas
+{
+private:
+    int x,y;
+    
+public:
+    
+    Compas() {
+        x = 27;
+        y = 39;
+    }
+
+    //// Directions
+    // Return address in order to chain directions
+    // and edit position in place.
+
+    // North
+    Compas& north(int n) {
+        y += n;
+        return *this;
+    }
+
+    // South
+    Compas& south(int n) {
+        y -= n;
+        return *this;
+    }
+
+    // East
+    Compas& east(int n) {
+        x += n;
+        return *this;
+    }
+
+    // West
+    Compas& west(int n) {
+        x -= n;
+        return *this;
+    }
+    
+    inline std::string where_am_i() { return "(" + std::to_string(x) + "," + std::to_string(y) + ")"; }
+};
+
 #endif

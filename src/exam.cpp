@@ -39,3 +39,13 @@ void test_voiture()
 	Voiture voiture(limite_moteur);
 	voiture.run(130);
 }
+
+//------------------------------------------------------------------
+// A copier dans exam.cpp et ne modifier!
+void run_compas()
+{
+	Compas me;
+	cout << "starting point = " << me.where_am_i() << endl;
+	me.north(4).east(5).south(6).west(2);
+	cout << "ending point = " << me.where_am_i() << endl;
+}
