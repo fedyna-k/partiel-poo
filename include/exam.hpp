@@ -133,4 +133,44 @@ public:
     inline std::string where_am_i() { return "(" + std::to_string(x) + "," + std::to_string(y) + ")"; }
 };
 
+// ----- Classe EXO4 -----
+
+class EXO4 {
+    public:
+        static const int value = 12;
+};
+
+//------------------------------------------------------------------
+// EXO 5
+// code à copier dans exam.hpp / exam.cpp
+
+// Useful macro to get colorname
+#define COLOR_NAME($1) (string[]){"r", "g", "b"}[(int)log2($1())]
+
+enum RGB {r=0b001,g=0b010,b=0b100};
+class Couleur
+{
+ private:
+    RGB c;
+ public:
+    Couleur(RGB a):c(a){}
+    int operator()(){return c;}
+};
+
+//------------------------------------------------------------------
+// EXO 6
+// code à copier dans exam.hpp
+class Animal
+{
+public:
+    virtual void make_sound() = 0;
+};
+
+/*
+class Dog ...
+class Cat ...
+class Cow ...
+A vous de coder ces classes
+*/
+
 #endif

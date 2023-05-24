@@ -1,5 +1,6 @@
 #include "exam.hpp"
 
+// To use namespaces without editing the functions
 using namespace std;
 
 //------------------------------------------------------------------
@@ -49,3 +50,44 @@ void run_compas()
 	me.north(4).east(5).south(6).west(2);
 	cout << "ending point = " << me.where_am_i() << endl;
 }
+
+//------------------------------------------------------------------
+// EXO 4
+// code à copier dans exam.hpp / exam.cpp ou main.cpp
+// ce code ne doit pas etre modifié
+// void eval_exo4()
+// {
+// 	EXO4 a1;
+// 	EXO4 a2;
+// 	a1.value *= 2;
+// 	a2.value += 6;
+// 	EXO4::value -= 4;
+// 	cout << "EXO4 resultat :" << a1.value << "." << a2.value << "." << EXO4::value << endl;
+// }
+
+// -------------------------------------
+// EXO5
+string mix(Couleur a, Couleur b) {
+    string final_mix = "";
+
+    final_mix += COLOR_NAME(a);
+    final_mix += COLOR_NAME(b);
+
+    return final_mix;
+}
+
+// la fonction eval_exo5 doit etre copiée dans exam.cpp et ne doit pas être modifiée 
+void eval_exo5()
+{
+    Couleur r(RGB::r);
+    Couleur g(RGB::g);
+    Couleur b(RGB::b);
+	cout<<"result : "
+        <<mix(r,g)<<","<<mix(r,b)<<","<<mix(g,b)<<","
+        <<mix(r,r)<<","<<mix(g,g)<<","<<mix(b,b)<<endl;
+}
+
+// expected output
+//result : rg,rb,gb,r,g,b
+// or
+//result : rg,rb,gb,rr,gg,bb 
