@@ -32,9 +32,9 @@ class EXO11 : public EXO1 {
     public:
 
         // Constructor
-        EXO11(int initial_val = DEFAULT_VAL) {
-            val = initial_val;
-        }
+        EXO11(int initial_val = DEFAULT_VAL) :
+            val(initial_val)
+        {}
 
         // Redefine value function
         inline int value() {return val;}
