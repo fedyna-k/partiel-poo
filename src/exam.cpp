@@ -91,3 +91,35 @@ void eval_exo5()
 //result : rg,rb,gb,r,g,b
 // or
 //result : rg,rb,gb,rr,gg,bb 
+
+
+//------------------------------------------------------------------
+// EXO 6
+// code à copier dans exam.cpp
+void eval_exo6()
+{
+    // à vous de coder:
+	//instancier un chien, un chat et une vache
+	Dog doggo;
+	Cat gatto;
+	Cow marguerite;
+
+	// Déclarer et remplir un vecteur animals de pointeurs d'Animal
+
+	// Making almost bizzfuzz test with animals because why not
+	vector<Animal *> ferme(11);
+	for (int i(0) ; i < ferme.size() ; i++) {
+		if (i % 3 == 0) {
+			ferme[i] = new Dog();
+		} else if (i % 5 == 0) {
+			ferme[i] = new Cow();
+		} else {
+			ferme[i] = new Cat();
+		}
+	}
+
+	// appeler make_sound() pour chaque animal du vecteur
+	for (auto animal: ferme) {
+		animal->make_sound();
+	}
+}

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
 
 // ----- Classe EXO1 -----
 
@@ -172,5 +173,21 @@ class Cat ...
 class Cow ...
 A vous de coder ces classes
 */
+
+class Dog : public Animal {
+    public:
+        inline void make_sound() {std::cout << "waf" << std::endl;}
+};
+
+class Cat : public Animal {
+    public:
+        inline void make_sound() {std::cout << "meow" << std::endl;}
+};
+
+class Cow : public Animal {
+    public:
+        inline void make_sound() {std::cout << "meuh" << std::endl;}
+};
+
 
 #endif
